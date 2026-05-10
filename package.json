@@ -1,6 +1,33 @@
 {
   "name": "gameverse",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "GameVerse - Portal de jogos AAA"
+  "description": "GameVerse - Portal de notícias e reviews de jogos AAA. Projeto acadêmico de DevOps & Frontend.",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1",
+    "serve": "http-server . -p 8080 -c-1 --silent",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**,cypress/**\"",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:js": "eslint \"assets/js/**/*.js\"",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "build": "node scripts/build.js",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test serve http://localhost:8080 cy:run"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0",
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.3",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandrefacherisrebello/gameverse.git"
+  },
+  "author": "Alexandre Facheris Rebello & João Roveri",
+  "license": "MIT"
 }
