@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matéria | GameVerse</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body style="padding-top:70px;">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <i class="bi bi-controller text-danger"></i> Game<span class="text-danger">Verse</span>
+      </a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Notícias</a></li>
+          <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero do artigo (preenchido via JS) -->
+  <header class="article-hero" id="article-hero" data-cy="article-hero">
+    <div class="container article-hero-content">
+      <a href="javascript:history.back()" class="text-light small mb-3 d-inline-block"><i class="bi bi-arrow-left"></i> Voltar</a>
+      <span class="badge-category position-static d-inline-block mb-3" id="article-category"></span>
+      <h1 id="article-title" data-cy="article-title"></h1>
+      <div class="article-meta" id="article-meta"></div>
+    </div>
+  </header>
+
+  <!-- Corpo -->
+  <article class="article-body" id="article-body" data-cy="article-body"></article>
+
+  <footer>
+    <div class="container text-center">
+      <p class="small mb-0">© 2026 GameVerse - Projeto Acadêmico</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/post.js"></script>
+</body>
+</html>
