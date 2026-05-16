@@ -108,7 +108,7 @@
         form.reset();
         form.classList.remove('was-validated');
         document.getElementById('newsletter-success').classList.add('d-none');
-        const modal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
+        const modal = bootstrap.Modal.getInstance(document.getElementById('newsletter-modal'));
         if (modal) modal.hide();
       }, 1800);
     });
