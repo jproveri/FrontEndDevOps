@@ -7,7 +7,7 @@ window.GAMEVERSE_DATA = {
     {
       id: 'gta6-launch-date',
       slug: 'gta-vi-19-novembro-2026',
-      title: 'Grand Theft Auto VI chega oficialmente em 19 de novembro de 2026',
+      title: 'GTA VI: Grand Theft Auto VI chega oficialmente em 19 de novembro de 2026',
       category: 'Mundo Aberto',
       date: '2026-05-12',
       author: 'Alexandre Facheris Rebello',

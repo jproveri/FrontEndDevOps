@@ -19,7 +19,7 @@ describe('GameVerse - Newsletter modal', () => {
   it('deve aceitar inscrição válida e mostrar mensagem de sucesso', () => {
     cy.get('[data-cy="open-newsletter"]').click();
     cy.get('[data-cy="newsletter-name"]').type('Alexandre');
-    cy.get('[data-cy="newsletter-email"]').type('alex@gameverse.com');
+    cy.get('[data-cy="newsletter-email"]').invoke('val', 'alex@gameverse.com').trigger('input');
     cy.get('[data-cy="newsletter-submit"]').click();
     cy.get('[data-cy="newsletter-success"]').should('be.visible');
   });
