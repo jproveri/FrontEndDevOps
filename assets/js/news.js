@@ -15,7 +15,8 @@
 
     const filtered = data.news.filter(function (n) {
       const matchesCategory = activeCategory === 'todos' || n.category === activeCategory;
-      const matchesSearch = !searchTerm || n.title.toLowerCase().includes(searchTerm) || n.excerpt.toLowerCase().includes(searchTerm);
+      const searchable = [n.title, n.excerpt, n.id, n.slug, n.category].join(' ').toLowerCase();
+      const matchesSearch = !searchTerm || searchable.includes(searchTerm);
       return matchesCategory && matchesSearch;
     });
 
@@ -30,8 +31,9 @@
   }
 
   function resolveImg(p) {
-    if (!p || /^https?:/.test(p) || p.startsWith('/')) return p;
-    return window.location.pathname.includes('/pages/') ? '../' + p : p;
+    if (!p || /^https?:/.test(p)) return p;
+    const path = p.startsWith('/') ? p : (window.location.pathname.includes('/pages/') ? '../' + p : p);
+    return new URL(path, window.location.href).href;
   }
 
   function card(n) {

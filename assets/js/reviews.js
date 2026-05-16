@@ -24,8 +24,9 @@
   }
 
   function resolveImg(p) {
-    if (!p || /^https?:/.test(p) || p.startsWith('/')) return p;
-    return window.location.pathname.includes('/pages/') ? '../' + p : p;
+    if (!p || /^https?:/.test(p)) return p;
+    const path = p.startsWith('/') ? p : (window.location.pathname.includes('/pages/') ? '../' + p : p);
+    return new URL(path, window.location.href).href;
   }
 
   function card(r) {

@@ -59,8 +59,9 @@
   function resolveImg(p) {
     // Resolve caminho da imagem baseado em onde a página está.
     // Se estamos em /pages/*.html, prefixa com '../'
-    if (!p || /^https?:/.test(p) || p.startsWith('/')) return p;
-    return window.location.pathname.includes('/pages/') ? '../' + p : p;
+    if (!p || /^https?:/.test(p)) return p;
+    const path = p.startsWith('/') ? p : (window.location.pathname.includes('/pages/') ? '../' + p : p);
+    return new URL(path, window.location.href).href;
   }
 
   function scoreClass(s) {
@@ -99,10 +100,15 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      if (!form.checkValidity()) {
+      const nameInput = document.getElementById('newsletter-name');
+      const emailInput = document.getElementById('newsletter-email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValid = nameInput.value.trim().length >= 2 && emailPattern.test(emailInput.value.trim());
+      if (!isValid) {
         form.classList.add('was-validated');
         return;
       }
+      form.classList.remove('was-validated');
       document.getElementById('newsletter-success').classList.remove('d-none');
       setTimeout(function () {
         form.reset();
